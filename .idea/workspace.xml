@@ -39,7 +39,7 @@
       <updated>1597278659367</updated>
       <workItem from="1597278661698" duration="228000" />
       <workItem from="1597278911812" duration="197000" />
-      <workItem from="1597279124433" duration="6584000" />
+      <workItem from="1597279124433" duration="7434000" />
     </task>
     <servers />
   </component>
@@ -47,6 +47,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="434" y="259" key="#Notifications" timestamp="1597286073666">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="434" y="259" key="#Notifications/0.0.1368.872@0.0.1368.872" timestamp="1597286073666" />
     <state x="186" y="81" key="SettingsEditor" timestamp="1597278887104">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

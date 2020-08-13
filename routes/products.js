@@ -11,8 +11,13 @@ router.get('/total', (req, res) => {
 
 // product data 생성하기
 router.post('/register', (req, res) => {
+    const product = {
+        name: req.body.productname,
+        price: req.body.productprice
+    }
     res.json({
-        message: 'product data 생성하기'
+        message: 'product data 생성하기',
+        createdProduct: product //우리가 입력한 값을 뿌려주겠다.
     })
 })
 

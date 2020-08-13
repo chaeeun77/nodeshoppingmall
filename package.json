@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chaeeun77/nodeshoppingmall/issues"
   },
-  "homepage": "https://github.com/chaeeun77/nodeshoppingmall#readme"
+  "homepage": "https://github.com/chaeeun77/nodeshoppingmall#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

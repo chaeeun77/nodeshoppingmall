@@ -1,13 +1,15 @@
 const express = require('express'); //서버를 불러오는것, const : 상수화시킨다.
 const app = express(); // ()는 모음을 표시한다.
 
-app.use((req, res) => {
-    res.json({
-        message: 'It works!'
-    })
-})//req : 사용자의 모든 요청을 추상화시킨것
+// app.use((req, res) => {
+//     res.json({
+//         message: 'It works!'
+//     })
+// })//req : 사용자의 모든 요청을 추상화시킨것
 
+const productRoutes = require('./routes/products');
 
+app.use('/products', productRoutes)
 
 
 const PORT = 5000;

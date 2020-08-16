@@ -2,16 +2,24 @@ const express = require('express'); //서버를 불러오는것, const : 상수�
 const app = express(); // ()는 모음을 표시한다.
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-
-// app.use((req, res) => {
-//     res.json({
-//         message: 'It works!'
-//     })
-// })//req : 사용자의 모든 요청을 추상화시킨것
+const mongoose = require("mongoose");
 
 const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
 //order.js의 내용을 require(불러와서)하고 이를 상수화시킨다. 왜? 내용이 기니까
+
+//database 연결
+const dbaddress = "mongodb+srv://admin:codms13@cluster0.loeyr.mongodb.net/shoppingmall?retryWrites=true&w=majority"; //""사이에 주소가 들어갈것이다.
+const dboptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
+
+mongoose
+    .connect(dbaddress, dboptions) //어디에 접속
+    .then(() => console.log("MongoDb connected"))
+    .catch(err => console.log(err.message)); //err을 담겠다.
+
 
 //middle wear 설정 (서버가 시작이되면 요청과 응답 중간에서 꼭 거치는건데 dev 버전으로 표현하겠다.
 app.use(morgan('dev'));

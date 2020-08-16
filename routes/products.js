@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const productModel = require("../models/product");
 
 //product data 불러오기
 router.get('/total', (req, res) => {
@@ -11,14 +12,33 @@ router.get('/total', (req, res) => {
 
 // product data 생성하기
 router.post('/register', (req, res) => {
-    const product = {
+
+    const newProduct = new productModel({
         name: req.body.productname,
         price: req.body.productprice
-    }
-    res.json({
-        message: 'product data 생성하기',
-        createdProduct: product //우리가 입력한 값을 뿌려주겠다.
     })
+
+    newProduct
+        .save()
+        .then(doc => {
+            res.json({
+                message: "saved data",
+                productInfo: doc
+            })
+        })
+        .catch(err => {
+            res.json({
+                message: err.message
+            })
+        })
+    // const product = {
+    //     name: req.body.productname,
+    //     price: req.body.productprice
+    // }
+    // res.json({
+    //     message: 'product data 생성하기',
+    //     createdProduct: product //우리가 입력한 값을 뿌려주겠다.
+    // })
 })
 
 

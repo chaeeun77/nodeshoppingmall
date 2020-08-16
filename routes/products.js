@@ -71,6 +71,7 @@ router.get('/:productId', (req, res) => {
         })
 
         .catch(err => {
+            console.log("error object ", err)
             res.json({
                 message: err.message
             })
@@ -89,10 +90,25 @@ router.put('/', (req, res) => {
 
 
 // product data delete 하기
-router.delete('/', (req, res) => {
-    res.json({
-        message: 'product data delete 하기'
-    })
+router.delete('/:productId', (req, res) => {
+    const id = req.params.productId
+
+    productModel
+        .findByIdAndDelete(id)
+        .then(result => {
+            res.json({
+                message: "deleted product at " + id
+            })
+        })
+        .catch(err => {
+            res.json({
+                message: err.message
+            })
+        })
+
+    // res.json({
+    //     message: 'product data delete 하기'
+    // })
 })
 
 module.exports = router; //상수화 시킨 router를 모듈화해서 다른 곳에서도 표현시키도록 export시키겠다.

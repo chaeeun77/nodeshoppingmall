@@ -12,7 +12,8 @@ const orderRoutes = require('./routes/orders');
 const dbaddress = "mongodb+srv://admin:codms13@cluster0.loeyr.mongodb.net/shoppingmall?retryWrites=true&w=majority"; //""사이에 주소가 들어갈것이다.
 const dboptions = {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: true
 }
 
 mongoose

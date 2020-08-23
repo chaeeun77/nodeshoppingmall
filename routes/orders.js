@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const orderModel = require('../models/orders')
+const productModel = require("../models/product")
 
 //order(장바구니) data 불러오기
 router.get('/total', (req, res) => {
@@ -35,36 +36,42 @@ router.get('/total', (req, res) => {
 
 //order data 생성하기
 router.post('/', (req, res) => {
-    // res.json({
-    //     message: 'order data 생성하기'
-    // })
-    const newOrder = new orderModel({
-        product: req.body.productId,
-        quantity: req.body.qty
-    })
 
-    newOrder
-        .save()
-        .then(doc => {
-            res.json({
-                message: "saved order",
-                orderInfo: {
-                    id: doc._id,
-                    product: doc.product,
-                    quantity: doc.quantity,
-                    request: {
-                        type: 'GET',
-                        url: "http://localhost:5000/orders/" + doc._id
-                    }
-                }
+    productModel
+        .findById(req.body.productId)
+        .then(product => {
+
+            const newOrder = new orderModel({
+                product: req.body.productId,
+                quantity: req.body.qty
             })
+            newOrder
+                .save()
+                .then(doc => {
+                    res.json({
+                        message: "saved order",
+                        orderInfo: {
+                            id: doc._id,
+                            product: doc.product,
+                            quantity: doc.quantity,
+                            request: {
+                                type: 'GET',
+                                url: "http://localhost:5000/orders/" + doc._id
+                            }
+                        }
+                    })
+                })
+                .catch(err => {
+                    res.json({
+                        message: err.message
+                    })
+                })
         })
         .catch(err => {
             res.json({
-                message: err.message
+                message: "product not found"
             })
         })
-
 })
 
 //order data 업데이트하기

@@ -43,7 +43,7 @@
       <workItem from="1597289448044" duration="19760000" />
       <workItem from="1597655926496" duration="1152000" />
       <workItem from="1597659685620" duration="33000" />
-      <workItem from="1598174461416" duration="630000" />
+      <workItem from="1598174461416" duration="2846000" />
     </task>
     <servers />
   </component>
@@ -63,5 +63,9 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="186" y="81" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1597278887104" />
+    <state x="407" y="348" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1598175317870">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="407" y="348" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1368.872@0.0.1368.872" timestamp="1598175317870" />
   </component>
 </project>

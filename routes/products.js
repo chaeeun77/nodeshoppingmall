@@ -8,10 +8,25 @@ router.get('/total', (req, res) => {
     productModel
         .find() //배열로 결과를 불러온다.
         .then(docs => {
-            res.json({
+            // res.json({
+            //     count: docs.length,
+            //     products: docs
+            // })
+            const response = {
                 count: docs.length,
-                products: docs
-            })
+                products: docs.map(doc => {
+                    return{
+                        id: doc._id,
+                        name: doc.name,
+                        price: doc.price,
+                        request: {
+                            type: "GET",
+                            url: "http://localhost:5000/products/" + doc._id
+                        }
+                    }
+                })
+            }
+            res.json(response)
         })
         .catch(err => {
             res.json({
@@ -40,7 +55,15 @@ router.post('/register', (req, res) => {
         .then(doc => {
             res.json({
                 message: "saved data",
-                productInfo: doc
+                productInfo: {
+                    id: doc._id,
+                    name: doc.name,
+                    price: doc.price,
+                    request: {
+                        type: 'GET',
+                        url: "http://localhost:5000/products/" + doc._id
+                    }
+                }
             })
         })
         .catch(err => {
@@ -66,7 +89,15 @@ router.get('/:productId', (req, res) => {
         .then(doc => {
             res.json({
                 message: "get product data from " + id,
-                productInfo: doc
+                productInfo: {
+                    id: doc._id,
+                    name: doc.name,
+                    price: doc.price,
+                    request: {
+                        type: "GET",
+                        url: 'http://localhost:5000/products/total'
+                    }
+                }
             })
         })
 
@@ -93,7 +124,11 @@ router.put('/:productId', (req, res) => {
         .then(result => {
             console.log("result is ", result)
             res.json({
-                message: "updated product at " + id
+                message: "updated product at " + id,
+                request: {
+                    type: "GET",
+                    url: "http://localhost:5000/products/" + id
+                }
             })
         })
         .catch(err => {
@@ -117,7 +152,11 @@ router.delete('/:productId', (req, res) => {
         .findByIdAndDelete(id)
         .then(result => {
             res.json({
-                message: "deleted product at " + id
+                message: "deleted product at " + id,
+                request: {
+                    type: "GET",
+                    url: 'http://localhost:5000/products/total'
+                }
             })
         })
         .catch(err => {

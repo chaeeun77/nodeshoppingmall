@@ -8,6 +8,7 @@ require('./config/db')
 
 const productRoutes = require('./routes/products');
 const orderRoutes = require('./routes/orders');
+const userRoutes = require('./routes/user')
 //order.js의 내용을 require(불러와서)하고 이를 상수화시킨다. 왜? 내용이 기니까
 
 
@@ -22,6 +23,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 // router
 app.use('/products', productRoutes)
 app.use('/orders', orderRoutes)
+app.use('/user', userRoutes)
 //use : 실행시키겠다. orders라는 것을 요청하면 orderRoutes를 실행시키겠다.
 
 const PORT = process.env.PORT || 7000;

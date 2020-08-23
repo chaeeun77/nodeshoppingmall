@@ -3,8 +3,14 @@ const mongoose = require('mongoose');
 
 //2번
 const productShcema = mongoose.Schema({
-    name: String,
-    price: Number
+    name: {
+        type: String,
+        required: true //이 데이터가 없으면 error가 난다. name에 대한 데이터가 필수내용이라 안적으면 오류
+    },
+    price: {
+        type: Number,
+        required: true
+    }
 }); //스키마 : 엑셀에서 칸 같은거
 
 //3번

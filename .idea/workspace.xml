@@ -25,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bokseub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -40,7 +40,10 @@
       <workItem from="1597278661698" duration="228000" />
       <workItem from="1597278911812" duration="197000" />
       <workItem from="1597279124433" duration="9747000" />
-      <workItem from="1597289448044" duration="17038000" />
+      <workItem from="1597289448044" duration="19760000" />
+      <workItem from="1597655926496" duration="1152000" />
+      <workItem from="1597659685620" duration="33000" />
+      <workItem from="1598174461416" duration="630000" />
     </task>
     <servers />
   </component>
@@ -52,10 +55,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="434" y="259" key="#Notifications/0.0.1368.872@0.0.1368.872" timestamp="1597286073666" />
-    <state x="465" y="191" key="FileChooserDialogImpl" timestamp="1597289462294">
+    <state x="465" y="191" key="FileChooserDialogImpl" timestamp="1597659713691">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="465" y="191" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1597289462294" />
+    <state x="465" y="191" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1597659713691" />
     <state x="186" y="81" key="SettingsEditor" timestamp="1597278887104">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

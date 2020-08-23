@@ -54,6 +54,9 @@ router.post('/register', (req, res) => {
 //로그인
 router.post('/login', (req, res) => {})
 
+    // 이메일 체크 => password 암호화 => 데이터베이스 저장
+
+
 
 
 //2번 -> server에 가서 만들기

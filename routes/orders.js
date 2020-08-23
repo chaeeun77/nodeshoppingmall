@@ -93,6 +93,7 @@ router.get('/:orderId', (req, res) => {
     const id = req.params.orderId
     orderModel
         .findById(id)
+        .populate('product', ['name', 'price'])
         .then(doc => {
             res.json({
                 message: "get order data from " + id,
